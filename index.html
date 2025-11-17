@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Converter Soal → JSON</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.7.0/docx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+<div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-6">
+<h1 class="text-2xl font-bold mb-4">Converter Soal Lengkap → questions.json</h1>
+
+<div id="dropArea" class="border-2 border-dashed p-6 text-center my-4 bg-gray-50">
+Drag & Drop file .docx di sini
+</div>
+
+<input type="file" id="docxFile" accept=".docx" class="mb-2">
+<button onclick="readDocx()" class="bg-blue-600 text-white px-4 py-2 rounded">Baca File .docx</button>
+
+<textarea id="input" class="w-full h-64 border p-3 rounded mt-4" placeholder="Paste soal di sini..."></textarea>
+
+<button onclick="convert()" class="bg-green-600 text-white px-4 py-2 rounded mt-4">Convert ke JSON</button>
+
+<pre id="output" class="bg-gray-200 p-4 rounded h-64 overflow-auto mt-4"></pre>
+
+<button onclick="downloadJSON()" class="bg-purple-600 text-white px-4 py-2 rounded mt-4">Download JSON</button>
+<button onclick="exportExcel()" class="bg-yellow-600 text-white px-4 py-2 rounded mt-4 ml-2">Export Excel</button>
+
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
